@@ -8,7 +8,7 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
     public ApplicationDbContext CreateDbContext(string[] args)
     {
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-        var connectionString = @"server=.,5433;Database=AutoLot.TPT;User Id=sa;Password=P@ssw0rd;Encrypt=False;";
+        var connectionString = @"Server=localhost\SQLEXPRESS;Integrated Security=true;Database=AutoLotTPT;Encrypt=false;MultipleActiveResultSets=True";
         optionsBuilder = optionsBuilder.UseSqlServer(connectionString);
         Console.WriteLine(connectionString);
         return new ApplicationDbContext(optionsBuilder.Options);

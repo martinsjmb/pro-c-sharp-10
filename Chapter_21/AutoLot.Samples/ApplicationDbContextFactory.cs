@@ -4,6 +4,9 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
 {
     public ApplicationDbContext CreateDbContext(string[] args)
     {
+        //comentário adicionado 3
+
+
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
         var connectionString = @"Server=.\SQLEXPRESS;Integrated Security=true;Database=AutoLotSamples;Encrypt=false;MultipleActiveResultSets=True";
         optionsBuilder.UseSqlServer(connectionString);
